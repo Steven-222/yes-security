@@ -32,7 +32,7 @@ jobs:
         env:
           # Set this to "/REPO_NAME" if deploying to https://username.github.io/REPO_NAME
           # Or leave empty for user/organization site https://username.github.io
-          GITHUB_PAGES_BASE: ${{ vars.GITHUB_PAGES_BASE }}
+          PAGES_BASE: ${{ vars.PAGES_BASE }}
         run: npm run export
 
       - name: Upload artifact

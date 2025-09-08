@@ -2,8 +2,8 @@ import type { NextConfig } from "next";
 
 // Configure static export for GitHub Pages.
 // If deploying to a project site (https://username.github.io/REPO_NAME),
-// set GITHUB_PAGES_BASE to "/REPO_NAME" in the environment, or replace below.
-const base = process.env.GITHUB_PAGES_BASE ?? "";
+// set PAGES_BASE to "/REPO_NAME" in the environment, or replace below.
+const base = process.env.PAGES_BASE ?? process.env.GITHUB_PAGES_BASE ?? "";
 
 const nextConfig: NextConfig = {
   output: "export",
