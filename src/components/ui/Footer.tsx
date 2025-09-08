@@ -1,6 +1,7 @@
 'use client'
 
 import Image from 'next/image'
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 import { useState } from 'react'
 
 interface FooterProps {
@@ -30,7 +31,7 @@ export default function Footer({ className = "" }: FooterProps) {
             <div className="flex items-center gap-3 mb-4">
               <div className="relative w-[40px] h-[34px]">
                 <Image
-                  src="/assets/Header/d93e143d52d949cb35be785e38e623596c968907.svg"
+                  src={`${base}/assets/Header/d93e143d52d949cb35be785e38e623596c968907.svg`}
                   alt="Yes Cybersecurity Logo"
                   fill
                   className="object-contain"

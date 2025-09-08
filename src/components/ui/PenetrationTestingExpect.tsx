@@ -1,4 +1,5 @@
 import Image from "next/image"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 export default function PenetrationTestingExpect() {
   const items = [
@@ -15,7 +16,7 @@ export default function PenetrationTestingExpect() {
           {/* Background image */}
           <div className="relative h-[420px] sm:h-[460px] lg:h-[520px]">
             <Image
-              src="/assets/penetration-testing%20/penetrationtesting-bg4.png"
+              src={`${base}/assets/penetration-testing%20/penetrationtesting-bg4.png`}
               alt=""
               fill
               className="object-cover"

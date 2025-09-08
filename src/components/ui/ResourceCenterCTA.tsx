@@ -1,4 +1,5 @@
 import Image from "next/image";
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 import Link from "next/link";
 
 export default function ResourceCenterCTA() {
@@ -9,7 +10,7 @@ export default function ResourceCenterCTA() {
           {/* Background */}
           <div className="relative h-[420px] sm:h-[480px] lg:h-[520px]">
             <Image
-              src="/assets/resource-center/resource-center-bg3.png"
+              src={`${base}/assets/resource-center/resource-center-bg3.png`}
               alt="Protect your data"
               fill
               className="object-cover"

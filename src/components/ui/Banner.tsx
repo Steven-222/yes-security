@@ -1,13 +1,14 @@
 import Image from 'next/image'
 
-// Asset imports
-const backgroundImage1 = "/assets/Banner/01b1e850982e29cd57a459f8b18cbc9652b8f927.png"
-const backgroundImage2 = "/assets/Banner/9229f0566310ebeb7f006af38f88e68696cd2f52.png"
-const vectorBg = "/assets/Banner/aba8a6a03178162fb09947a4fb6e223afdbd131a.svg"
-const decorativeGroup1 = "/assets/Banner/3e0acaea366a59431a467ef40965d0c35976425d.svg"
-const decorativeGroup2 = "/assets/Banner/ccfaba2ef6c19a5de8668a6d75d411b6aaed9088.svg"
-const circleDecor1 = "/assets/Banner/b8dbc65ae577f3d5947d01a69cf5e42e568c5abb.svg"
-const circleDecor2 = "/assets/Banner/5f315adbe1bbde3e240d4790b52f60667eb4ea82.svg"
+// Asset imports (prefix with basePath for GitHub Pages)
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const backgroundImage1 = `${base}/assets/Banner/01b1e850982e29cd57a459f8b18cbc9652b8f927.png`
+const backgroundImage2 = `${base}/assets/Banner/9229f0566310ebeb7f006af38f88e68696cd2f52.png`
+const vectorBg = `${base}/assets/Banner/aba8a6a03178162fb09947a4fb6e223afdbd131a.svg`
+const decorativeGroup1 = `${base}/assets/Banner/3e0acaea366a59431a467ef40965d0c35976425d.svg`
+const decorativeGroup2 = `${base}/assets/Banner/ccfaba2ef6c19a5de8668a6d75d411b6aaed9088.svg`
+const circleDecor1 = `${base}/assets/Banner/b8dbc65ae577f3d5947d01a69cf5e42e568c5abb.svg`
+const circleDecor2 = `${base}/assets/Banner/5f315adbe1bbde3e240d4790b52f60667eb4ea82.svg`
 
 interface BannerProps {
   className?: string
@@ -23,7 +24,7 @@ export default function Banner({ className = "" }: BannerProps) {
       <div 
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url(/assets/hero/banner-bg.png)",
+          backgroundImage: `url(${base}/assets/hero/banner-bg.png)`,
           backgroundRepeat: 'no-repeat'
         }}
         aria-hidden="true"

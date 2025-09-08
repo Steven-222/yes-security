@@ -1,4 +1,5 @@
 import Image from "next/image"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 export default function PenetrationTestingBanner() {
   return (
@@ -9,7 +10,7 @@ export default function PenetrationTestingBanner() {
       {/* Background image anchored to the right, do not squeeze; keep inside section bounds */}
       <div aria-hidden className="pointer-events-none absolute inset-0 z-0 overflow-hidden">
         <Image
-          src="/assets/bg/penetrationtesting-bg1.png"
+          src={`${base}/assets/bg/penetrationtesting-bg1.png`}
           alt=""
           fill
           priority
