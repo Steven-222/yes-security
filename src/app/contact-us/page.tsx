@@ -19,6 +19,7 @@ export default function ContactUs() {
   const [loading, setLoading] = useState(false);
   const [ok, setOk] = useState<null | boolean>(null);
   const [selected, setSelected] = useState<string[]>([]);
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
   function toggleService(s: string) {
     setSelected((prev) =>
@@ -64,7 +65,7 @@ export default function ContactUs() {
       <Header />
       
       {/* Main Content with continuous background */}
-      <main className="flex-1 full-bleed bg-[#000c39] text-white bg-[url(var(--base)/assets/bg/contactus-bg.png)] bg-no-repeat bg-cover bg-center" style={{ ['--base' as any]: process.env.NEXT_PUBLIC_BASE_PATH ?? '' }}>
+      <main className="flex-1 full-bleed bg-[#000c39] text-white bg-no-repeat bg-cover bg-center" style={{ backgroundImage: `url(${base}/assets/bg/contactus-bg.png)` }}>
         {/* Hero Section */}
         <section className="relative py-20 min-h-[320px] md:min-h-[420px]">
           <div className="container-site text-center relative z-10">
