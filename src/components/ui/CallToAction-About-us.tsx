@@ -4,6 +4,8 @@ interface CallToActionAboutUsProps {
   className?: string
 }
 
+import Link from "next/link"
+
 export default function CallToActionAboutUs({ className = "" }: CallToActionAboutUsProps) {
   return (
     <section 
@@ -29,13 +31,13 @@ export default function CallToActionAboutUs({ className = "" }: CallToActionAbou
             Free Consultation
           </button>
           
-          <a 
+          <Link 
             href="/contact-us"
             className="bg-[#3eff51] text-black font-['Wix_Madefor_Display',_sans-serif] font-semibold text-base px-6 py-3 rounded-[41px] hover:bg-[#35e047] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#3eff51] focus:ring-offset-2 focus:ring-offset-[#000c39] min-w-[140px] inline-block text-center"
             aria-label="Contact us"
           >
             Contact Us
-          </a>
+          </Link>
         </div>
       </div>
       </div>

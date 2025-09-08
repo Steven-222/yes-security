@@ -8,6 +8,9 @@ const base = process.env.PAGES_BASE ?? process.env.GITHUB_PAGES_BASE ?? "";
 const nextConfig: NextConfig = {
   output: "export",
   images: { unoptimized: true },
+  env: {
+    NEXT_PUBLIC_BASE_PATH: base,
+  },
   // Uncomment and set explicitly if you know the repo name:
   // basePath: "/REPO_NAME",
   // assetPrefix: "/REPO_NAME/",
