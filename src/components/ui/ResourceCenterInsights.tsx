@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { getImage } from '@/utils/get-image';
 
 const TABS = ["Insights", "Guides", "Reports", "Training", "Workshops"] as const;
 
@@ -23,7 +24,7 @@ const items = Array.from({ length: 12 }).map((_, i) => ({
     "Top 5 Security Misconfigurations That Hackers Exploit",
     "Penetration Testing Explained: What, Why, and How",
   ][i],
-  img: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/resource-center/insight-bg${i + 1}.png`,
+  img: getImage(`/assets/resource-center/insight-bg${i + 1}.png`),
 }));
 
 export default function ResourceCenterInsights() {

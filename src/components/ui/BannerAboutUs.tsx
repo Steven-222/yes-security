@@ -1,3 +1,5 @@
+import { getImage } from '@/utils/get-image'
+
 interface BannerAboutUsProps {
   className?: string
 }
@@ -6,7 +8,7 @@ export default function BannerAboutUs({ className = "" }: BannerAboutUsProps) {
   return (
     <section 
       className={`full-bleed relative text-white overflow-hidden min-h-[420px] sm:min-h-[520px] lg:min-h-[600px] ${className}`}
-      style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/bg/aboutus-bg1.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}
+      style={{ backgroundImage: `url(${getImage('/assets/bg/aboutus-bg1.png')})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}
       aria-label="About us banner"
     >
       

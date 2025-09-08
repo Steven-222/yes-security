@@ -46,7 +46,7 @@ export const metadata: Metadata = {
     locale: 'en_US',
     images: [
       {
-        url: '/images/about-us-og-image.jpg',
+        url: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/og/about-us-og-image.jpg`,
         width: 1200,
         height: 630,
         alt: 'YesIT Security - About Our Cybersecurity Company',
@@ -59,7 +59,7 @@ export const metadata: Metadata = {
     description: 'Learn about our cybersecurity experts and IT security services. Protecting businesses from cyber threats with proven solutions.',
     site: '@YesITSecurity',
     creator: '@YesITSecurity',
-    images: ['/images/about-us-twitter-card.jpg'],
+    images: [`${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/og/about-us-twitter-card.jpg`],
   },
   alternates: {
     canonical: 'https://yesitsecurity.com/about-us',
@@ -81,7 +81,7 @@ const jsonLd = {
   name: 'YesIT Security',
   description: 'Leading cybersecurity company providing comprehensive IT security services, cyber threat protection, and security consulting to businesses worldwide.',
   url: 'https://yesitsecurity.com',
-  logo: 'https://yesitsecurity.com/images/logo.png',
+  logo: `https://steven-222.github.io/yes-security/assets/Header/d93e143d52d949cb35be785e38e623596c968907.svg`,
   foundingDate: '2020', // Update with actual founding date
   sameAs: [
     'https://linkedin.com/company/yesitsecurity',
