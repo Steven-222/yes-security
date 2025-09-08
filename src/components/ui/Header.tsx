@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -13,6 +14,37 @@ const arrowDownIcon = `${base}/assets/Header/7dd3d91acd48d834ca360d3a26148736d54
 export default function Header() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const pathname = usePathname();
+  
+  // Check if current route is Thai
+  const isThaiRoute = pathname.startsWith('/th');
+  const currentLang = isThaiRoute ? 'ไทย' : 'eng';
+  
+  // Helper function to get navigation links based on current language
+  const getNavLinks = () => {
+    const basePrefix = isThaiRoute ? '/th' : '';
+    return {
+      home: basePrefix === '' ? '/' : basePrefix,
+      aboutUs: `${basePrefix}/about-us`,
+      services: `${basePrefix}/our-service`,
+      blog: `${basePrefix}/blog`,
+      careers: `${basePrefix}/careers`,
+      contact: `${basePrefix}/contact-us`,
+    };
+  };
+  
+  // Helper function to toggle language
+  const getLanguageToggleUrl = () => {
+    if (isThaiRoute) {
+      // Switch from Thai to English
+      return pathname.replace('/th', '') || '/';
+    } else {
+      // Switch from English to Thai
+      return `/th${pathname}`;
+    }
+  };
+
+  const navLinks = getNavLinks();
 
   return (
     <header className="full-bleed bg-[#000c39] text-white" role="banner">
@@ -40,19 +72,19 @@ export default function Header() {
           <div className="hidden lg:flex items-center gap-6">
             {/* Navigation Links */}
             <div className="flex items-center gap-6">
-              <Link href="/" className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base" aria-current="page">
+              <Link href={navLinks.home} className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base" aria-current="page">
                 Home
               </Link>
-              <Link href="/about-us" className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
+              <Link href={navLinks.aboutUs} className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
                 About us
               </Link>
-              <Link href="/our-service" className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
+              <Link href={navLinks.services} className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
                 Services
               </Link>
-              <Link href="#" className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
+              <Link href={navLinks.blog} className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
                 Blog
               </Link>
-              <Link href="#" className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
+              <Link href={navLinks.careers} className="text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base">
                 Careers
               </Link>
             </div>
@@ -61,7 +93,7 @@ export default function Header() {
             <div className="flex items-center gap-4">
               {/* Contact Button */}
               <Link 
-                href="/contact-us"
+                href={navLinks.contact}
                 className="bg-[#3eff51] text-black font-['Wix_Madefor_Display',_sans-serif] font-semibold text-base px-[18px] py-3.5 rounded-[41px] hover:bg-[#35e047] transition-colors focus:outline-none focus:ring-2 focus:ring-[#3eff51] focus:ring-offset-2 focus:ring-offset-[#000c39] inline-block"
                 aria-label="Contact us"
               >
@@ -86,9 +118,9 @@ export default function Header() {
                   className="flex items-center gap-1 text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base focus:outline-none focus:ring-2 focus:ring-[#3eff51] focus:ring-offset-2 focus:ring-offset-[#000c39]"
                   aria-expanded={isLanguageOpen}
                   aria-haspopup="true"
-                  aria-label="Select language"
+                  aria-label={isThaiRoute ? "เลือกภาษา" : "Select language"}
                 >
-                  <span>eng</span>
+                  <span>{currentLang}</span>
                   <div className="w-5 h-5 relative rotate-90">
                     <Image
                       src={arrowDownIcon}
@@ -102,20 +134,26 @@ export default function Header() {
               
                 {isLanguageOpen && (
                   <div className="absolute right-0 mt-2 w-20 bg-white rounded-md shadow-lg z-50" role="menu">
-                    <button 
-                      className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
-                      onClick={() => setIsLanguageOpen(false)}
-                      role="menuitem"
-                    >
-                      eng
-                    </button>
-                    <button 
-                      className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
-                      onClick={() => setIsLanguageOpen(false)}
-                      role="menuitem"
-                    >
-                      ไทย
-                    </button>
+                    {!isThaiRoute && (
+                      <Link
+                        href={getLanguageToggleUrl()}
+                        className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
+                        onClick={() => setIsLanguageOpen(false)}
+                        role="menuitem"
+                      >
+                        ไทย
+                      </Link>
+                    )}
+                    {isThaiRoute && (
+                      <Link
+                        href={getLanguageToggleUrl()}
+                        className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
+                        onClick={() => setIsLanguageOpen(false)}
+                        role="menuitem"
+                      >
+                        eng
+                      </Link>
+                    )}
                   </div>
                 )}
               </div>
@@ -146,7 +184,7 @@ export default function Header() {
           <div className="lg:hidden bg-[#000c39] border-t border-gray-700 mt-2" role="menu">
             <div className="container-site pt-2 pb-3 space-y-1">
               <Link 
-                href="/" 
+                href={navLinks.home} 
                 className="block px-3 py-3 text-white hover:text-[#3eff51] hover:bg-gray-800 rounded-md font-['Wix_Madefor_Display',_sans-serif] transition-colors"
                 role="menuitem"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -154,7 +192,7 @@ export default function Header() {
                 Home
               </Link>
               <Link 
-                href="/about-us" 
+                href={navLinks.aboutUs} 
                 className="block px-3 py-3 text-white hover:text-[#3eff51] hover:bg-gray-800 rounded-md font-['Wix_Madefor_Display',_sans-serif] transition-colors"
                 role="menuitem"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -162,7 +200,7 @@ export default function Header() {
                 About us
               </Link>
               <Link 
-                href="/our-service" 
+                href={navLinks.services} 
                 className="block px-3 py-3 text-white hover:text-[#3eff51] hover:bg-gray-800 rounded-md font-['Wix_Madefor_Display',_sans-serif] transition-colors"
                 role="menuitem"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -170,7 +208,7 @@ export default function Header() {
                 Services
               </Link>
               <Link 
-                href="/blog" 
+                href={navLinks.blog} 
                 className="block px-3 py-3 text-white hover:text-[#3eff51] hover:bg-gray-800 rounded-md font-['Wix_Madefor_Display',_sans-serif] transition-colors"
                 role="menuitem"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -178,7 +216,7 @@ export default function Header() {
                 Blog
               </Link>
               <Link 
-                href="/careers" 
+                href={navLinks.careers} 
                 className="block px-3 py-3 text-white hover:text-[#3eff51] hover:bg-gray-800 rounded-md font-['Wix_Madefor_Display',_sans-serif] transition-colors"
                 role="menuitem"
                 onClick={() => setIsMobileMenuOpen(false)}
@@ -189,7 +227,7 @@ export default function Header() {
               {/* Mobile Contact Button */}
               <div className="pt-4 pb-2">
                 <Link 
-                  href="/contact-us"
+                  href={navLinks.contact}
                   className="block w-full bg-[#3eff51] text-black px-4 py-3 rounded-[41px] font-['Wix_Madefor_Display',_sans-serif] font-semibold hover:bg-[#35e047] transition-colors focus:outline-none focus:ring-2 focus:ring-[#3eff51] text-center"
                   role="menuitem"
                   onClick={() => setIsMobileMenuOpen(false)}
@@ -206,9 +244,9 @@ export default function Header() {
                     className="flex items-center gap-2 px-3 py-2 text-white hover:text-[#3eff51] transition-colors font-['Wix_Madefor_Display',_sans-serif] text-base focus:outline-none focus:ring-2 focus:ring-[#3eff51]"
                     aria-expanded={isLanguageOpen}
                     aria-haspopup="true"
-                    aria-label="Select language"
+                    aria-label={isThaiRoute ? "เลือกภาษา" : "Select language"}
                   >
-                    <span>eng</span>
+                    <span>{currentLang}</span>
                     <div className="w-4 h-4 relative rotate-90">
                       <Image
                         src={arrowDownIcon}
@@ -222,20 +260,32 @@ export default function Header() {
                   
                   {isLanguageOpen && (
                     <div className="mt-2 w-20 bg-white rounded-md shadow-lg z-50" role="menu">
-                      <button 
-                        className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
-                        onClick={() => setIsLanguageOpen(false)}
-                        role="menuitem"
-                      >
-                        eng
-                      </button>
-                      <button 
-                        className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
-                        onClick={() => setIsLanguageOpen(false)}
-                        role="menuitem"
-                      >
-                        ไทย
-                      </button>
+                      {!isThaiRoute && (
+                        <Link
+                          href={getLanguageToggleUrl()}
+                          className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
+                          onClick={() => {
+                            setIsLanguageOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}
+                          role="menuitem"
+                        >
+                          ไทย
+                        </Link>
+                      )}
+                      {isThaiRoute && (
+                        <Link
+                          href={getLanguageToggleUrl()}
+                          className="block w-full text-left px-3 py-2 text-slate-900 hover:bg-gray-100 rounded-md focus:outline-none focus:bg-gray-100 text-sm"
+                          onClick={() => {
+                            setIsLanguageOpen(false);
+                            setIsMobileMenuOpen(false);
+                          }}
+                          role="menuitem"
+                        >
+                          eng
+                        </Link>
+                      )}
                     </div>
                   )}
                 </div>
