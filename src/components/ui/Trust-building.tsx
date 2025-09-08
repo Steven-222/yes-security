@@ -1,12 +1,13 @@
 import Image from 'next/image'
 
-const visionBg = "/assets/Trust-building/78c4ee0377a8c71ab100a462746ddb35d2e5261e.png"
-const provenBg = "/assets/Trust-building/56944ecc83a233d283032067f03a7350fdf1ef2a.png"
-const confidentialBg = "/assets/Trust-building/c4a7906dee95fd1d3ae812861ec13fe11cc06ff4.png"
-const measurableBg = "/assets/Trust-building/80d13805bbac2e781c934ee95a5f57935759ff5f.png"
-const decorativeBg1 = "/assets/Trust-building/bb02a87caeaa9a0e8823fa520daeae8de3378644.svg"
-const decorativeBg2 = "/assets/Trust-building/748203537e9e2d5d82f2867b6f14a358ad76f7f1.svg"
-const secureIcon = "/assets/Trust-building/06e45d7884594960dc26212be5ab182d62f1e2a0.svg"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const visionBg = `${base}/assets/Trust-building/78c4ee0377a8c71ab100a462746ddb35d2e5261e.png`
+const provenBg = `${base}/assets/Trust-building/56944ecc83a233d283032067f03a7350fdf1ef2a.png`
+const confidentialBg = `${base}/assets/Trust-building/c4a7906dee95fd1d3ae812861ec13fe11cc06ff4.png`
+const measurableBg = `${base}/assets/Trust-building/80d13805bbac2e781c934ee95a5f57935759ff5f.png`
+const decorativeBg1 = `${base}/assets/Trust-building/bb02a87caeaa9a0e8823fa520daeae8de3378644.svg`
+const decorativeBg2 = `${base}/assets/Trust-building/748203537e9e2d5d82f2867b6f14a358ad76f7f1.svg`
+const secureIcon = `${base}/assets/Trust-building/06e45d7884594960dc26212be5ab182d62f1e2a0.svg`
 
 interface TrustBuildingProps {
   className?: string

@@ -1,9 +1,10 @@
 import Image from 'next/image'
 
 // Asset imports
-const blogCard1 = "/assets/Our-blog/bd45a5562cc0c15de3bd76b2c151d8d13be16b47.png"
-const blogCard2 = "/assets/Our-blog/daf60d19c244d97cb75bbaa461bb6fea7d4d7aad.png"
-const blogCard3 = "/assets/Our-blog/d81a7a5fef5b16de78e91dad905785f41b73d3ea.png"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const blogCard1 = `${base}/assets/Our-blog/bd45a5562cc0c15de3bd76b2c151d8d13be16b47.png`
+const blogCard2 = `${base}/assets/Our-blog/daf60d19c244d97cb75bbaa461bb6fea7d4d7aad.png`
+const blogCard3 = `${base}/assets/Our-blog/d81a7a5fef5b16de78e91dad905785f41b73d3ea.png`
 
 interface OurBlogProps {
   className?: string

@@ -1,7 +1,8 @@
 import Image from 'next/image'
 
-const visionImage = "/assets/Mission-vision/78c4ee0377a8c71ab100a462746ddb35d2e5261e.png"
-const missionImage = "/assets/Mission-vision/80d13805bbac2e781c934ee95a5f57935759ff5f.png"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const visionImage = `${base}/assets/Mission-vision/78c4ee0377a8c71ab100a462746ddb35d2e5261e.png`
+const missionImage = `${base}/assets/Mission-vision/80d13805bbac2e781c934ee95a5f57935759ff5f.png`
 
 interface MissionVisionProps {
   className?: string

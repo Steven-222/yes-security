@@ -3,16 +3,17 @@ import Image from "next/image"
 // Assets (exported from Figma)
 
 // Service type cards (use placeholders from Figma export if needed)
-const card01 = "/assets/Penetration-Testing/78c4ee0377a8c71ab100a462746ddb35d2e5261e.png"
-const card02 = "/assets/Penetration-Testing/b9852d3e4aec4e7271743a01f78d07d5254b166d.png"
-const card03 = "/assets/Penetration-Testing/97c5791955bd412df42bed43fde18361480ce56e.png"
-const card04 = "/assets/Penetration-Testing/a64150711082b0dd4cacab9d8013544098fd4dba.png"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const card01 = `${base}/assets/Penetration-Testing/78c4ee0377a8c71ab100a462746ddb35d2e5261e.png`
+const card02 = `${base}/assets/Penetration-Testing/b9852d3e4aec4e7271743a01f78d07d5254b166d.png`
+const card03 = `${base}/assets/Penetration-Testing/97c5791955bd412df42bed43fde18361480ce56e.png`
+const card04 = `${base}/assets/Penetration-Testing/a64150711082b0dd4cacab9d8013544098fd4dba.png`
 
 // Feature icons (sample subset)
-const icNetwork = "/assets/Penetration-Testing/8eb6be81896f9957ad1905119f35740df7d4d77c.svg"
-const icPhishing = "/assets/Penetration-Testing/2bcfea0b811cba1080bdb3f4e38624e345e2c15f.svg"
-const icDatabase = "/assets/Penetration-Testing/73c6b384cb6d1dcb29f02a8de4c150041cebe9c4.svg"
-const icShield = "/assets/Penetration-Testing/558166a68a991b05965a05fdbe814dfce59c6939.svg"
+const icNetwork = `${base}/assets/Penetration-Testing/8eb6be81896f9957ad1905119f35740df7d4d77c.svg`
+const icPhishing = `${base}/assets/Penetration-Testing/2bcfea0b811cba1080bdb3f4e38624e345e2c15f.svg`
+const icDatabase = `${base}/assets/Penetration-Testing/73c6b384cb6d1dcb29f02a8de4c150041cebe9c4.svg`
+const icShield = `${base}/assets/Penetration-Testing/558166a68a991b05965a05fdbe814dfce59c6939.svg`
 
 export default function PenetrationTesting() {
   return (

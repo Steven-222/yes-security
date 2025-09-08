@@ -23,7 +23,7 @@ const items = Array.from({ length: 12 }).map((_, i) => ({
     "Top 5 Security Misconfigurations That Hackers Exploit",
     "Penetration Testing Explained: What, Why, and How",
   ][i],
-  img: `/assets/resource-center/insight-bg${i + 1}.png`,
+  img: `${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/resource-center/insight-bg${i + 1}.png`,
 }));
 
 export default function ResourceCenterInsights() {
