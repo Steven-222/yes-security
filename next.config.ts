@@ -1,15 +1,17 @@
 import type { NextConfig } from "next";
 
-// Configure static export for GitHub Pages.
-// Default to "/yes-security"; allow override via PAGES_BASE.
-const base = process.env.PAGES_BASE ?? "/yes-security";
+// Configure for Vercel deployment by default, GitHub Pages if GITHUB_PAGES=true
+const isGitHubPages = process.env.GITHUB_PAGES === "true";
+const base = isGitHubPages ? (process.env.PAGES_BASE ?? "/yes-security") : "";
 
 const nextConfig: NextConfig = {
-  output: "export",
-  images: { unoptimized: true },
+  ...(isGitHubPages && {
+    output: "export",
+    basePath: base,
+    assetPrefix: `${base}/`,
+  }),
+  images: { unoptimized: isGitHubPages },
   env: { NEXT_PUBLIC_BASE_PATH: base },
-  basePath: base,
-  assetPrefix: `${base}/`,
 };
 
 export default nextConfig;
