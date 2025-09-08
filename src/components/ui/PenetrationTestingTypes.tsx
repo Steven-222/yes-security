@@ -4,13 +4,14 @@ import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 
 export default function PenetrationTestingTypes() {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const items = [
-    { title: "Web Application Penetration Testing", bg: "/assets/penetration-testing%20/type-bg1.png", ico: "/assets/penetration-testing%20/type-ico1.svg" },
-    { title: "Network & Infrastructure Penetration Testing", bg: "/assets/penetration-testing%20/type-bg2.png", ico: "/assets/penetration-testing%20/type-ico2.svg" },
-    { title: "Mobile Application Testing", bg: "/assets/penetration-testing%20/type-bg3.png", ico: "/assets/penetration-testing%20/type-ico3.svg" },
-    { title: "Social Engineering & Red Teaming", bg: "/assets/penetration-testing%20/type-bg4.png", ico: "/assets/penetration-testing%20/type-ico4.svg" },
-    { title: "Wireless & IoT Device Testing", bg: "/assets/penetration-testing%20/type-bg5.png", ico: "/assets/penetration-testing%20/type-ico5.svg" },
-    { title: "Cloud Security Assessmentz", bg: "/assets/penetration-testing%20/type-bg6.png", ico: "/assets/penetration-testing%20/type-ico6.svg" },
+    { title: "Web Application Penetration Testing", bg: `${base}/assets/penetration-testing%20/type-bg1.png`, ico: `${base}/assets/penetration-testing%20/type-ico1.svg` },
+    { title: "Network & Infrastructure Penetration Testing", bg: `${base}/assets/penetration-testing%20/type-bg2.png`, ico: `${base}/assets/penetration-testing%20/type-ico2.svg` },
+    { title: "Mobile Application Testing", bg: `${base}/assets/penetration-testing%20/type-bg3.png`, ico: `${base}/assets/penetration-testing%20/type-ico3.svg` },
+    { title: "Social Engineering & Red Teaming", bg: `${base}/assets/penetration-testing%20/type-bg4.png`, ico: `${base}/assets/penetration-testing%20/type-ico4.svg` },
+    { title: "Wireless & IoT Device Testing", bg: `${base}/assets/penetration-testing%20/type-bg5.png`, ico: `${base}/assets/penetration-testing%20/type-ico5.svg` },
+    { title: "Cloud Security Assessmentz", bg: `${base}/assets/penetration-testing%20/type-bg6.png`, ico: `${base}/assets/penetration-testing%20/type-ico6.svg` },
   ];
 
   // refs สำหรับเลื่อน
