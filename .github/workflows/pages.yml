@@ -33,7 +33,7 @@ jobs:
           # Set this to "/REPO_NAME" if deploying to https://username.github.io/REPO_NAME
           # Or leave empty for user/organization site https://username.github.io
           PAGES_BASE: ${{ vars.PAGES_BASE }}
-        run: npm run export
+        run: npm run export:pages
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

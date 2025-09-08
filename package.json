@@ -6,6 +6,7 @@
     "dev": "next dev",
     "build": "next build",
     "export": "next build && next export",
+    "export:pages": "mv -f src/app/api src/app/_api_disabled 2>/dev/null || true && next build && next export && mv -f src/app/_api_disabled src/app/api 2>/dev/null || true",
     "start": "next start",
     "lint": "next lint"
   },
