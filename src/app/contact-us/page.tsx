@@ -72,7 +72,7 @@ export default function ContactUs() {
               Contact <span className="text-[#3eff51]">Us</span>
             </h1>
             <p className="text-xl md:text-2xl text-gray-300 font-['Wix_Madefor_Display',_sans-serif] max-w-3xl mx-auto">
-              Get in touch with our cybersecurity experts. We're here to help protect your digital assets.
+              Get in touch with our cybersecurity experts. We&rsquo;re here to help protect your digital assets.
             </p>
           </div>
         </section>
@@ -172,7 +172,7 @@ export default function ContactUs() {
                     <input name="budget" aria-label="Budget" placeholder="Budget*" required className="h-11 rounded-full border border-neutral-300 px-4 text-sm placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-black/20"/>
                   </div>
 
-                  <textarea name="message" aria-label="Message" placeholder="Tell us what you're looking to achieve*" required className="mt-2 h-32 w-full rounded-2xl border border-neutral-300 p-4 text-sm placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-black/20"/>
+                  <textarea name="message" aria-label="Message" placeholder="Tell us what you&rsquo;re looking to achieve*" required className="mt-2 h-32 w-full rounded-2xl border border-neutral-300 p-4 text-sm placeholder:text-neutral-500 focus:outline-none focus:ring-2 focus:ring-black/20"/>
 
                   {/* honeypot: ซ่อนไว้ ถ้ามีค่าถือว่าเป็นบอท */}
                   <div aria-hidden className="hidden">

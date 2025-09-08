@@ -1,8 +1,4 @@
-import Image from 'next/image'
-
-const vector29 = "/assets/CallToAction-About-us/cd8fb5f5b8d1b401b1943ddc2338d5a9ad664274.svg"
-const group427318935 = "/assets/CallToAction-About-us/c56221a3b9f51f37c2165af4cbde20d3f2d45eb4.svg"
-const vector30 = "/assets/CallToAction-About-us/228c6a004273db5c91aef2910c6fe14dfdc27d39.svg"
+// Unused imports and variables removed to satisfy linter
 
 interface CallToActionAboutUsProps {
   className?: string
