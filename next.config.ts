@@ -12,8 +12,8 @@ const nextConfig: NextConfig = {
     NEXT_PUBLIC_BASE_PATH: base,
   },
   // Uncomment and set explicitly if you know the repo name:
-  // basePath: "/REPO_NAME",
-  // assetPrefix: "/REPO_NAME/",
+  basePath: "/yes-security",
+  assetPrefix: "/yes-security/",
   ...(base
     ? { basePath: base, assetPrefix: `${base}/` }
     : {}),
