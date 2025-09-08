@@ -5,9 +5,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 // Asset imports
-const logoIcon = "/assets/Header/d93e143d52d949cb35be785e38e623596c968907.svg";
-const dividerIcon = "/assets/Header/2a21772e3319901457193486200e6a6cc938abab.svg";
-const arrowDownIcon = "/assets/Header/7dd3d91acd48d834ca360d3a26148736d5492783.svg";
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+const logoIcon = `${base}/assets/Header/d93e143d52d949cb35be785e38e623596c968907.svg`;
+const dividerIcon = `${base}/assets/Header/2a21772e3319901457193486200e6a6cc938abab.svg`;
+const arrowDownIcon = `${base}/assets/Header/7dd3d91acd48d834ca360d3a26148736d5492783.svg`;
 
 export default function Header() {
   const [isLanguageOpen, setIsLanguageOpen] = useState(false);

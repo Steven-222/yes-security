@@ -1,7 +1,8 @@
 import Image from "next/image"
 
-const icon = "/assets/penetration-testing%20/ico1.svg"
-const rightImage = "/assets/penetration-testing%20/section3img.png"
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
+const icon = `${base}/assets/penetration-testing%20/ico1.svg`
+const rightImage = `${base}/assets/penetration-testing%20/section3img.png`
 
 export default function PenetrationTestingWhatIs() {
   const items = [

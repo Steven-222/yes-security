@@ -1,26 +1,27 @@
 import Image from 'next/image'
+const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
 
 // Assets from public/assets/ourservice/
 // Icons: service-ico{1..7}.svg
 // Hover BGs: service-hover{1..7}.png
 const serviceIcons = {
-  1: "/assets/ourservice/service-ico1.svg",
-  2: "/assets/ourservice/service-ico2.svg",
-  3: "/assets/ourservice/service-ico3.svg",
-  4: "/assets/ourservice/service-ico4.svg",
-  5: "/assets/ourservice/service-ico5.svg",
-  6: "/assets/ourservice/service-ico6.svg",
-  7: "/assets/ourservice/service-ico7.svg",
+  1: `${base}/assets/ourservice/service-ico1.svg`,
+  2: `${base}/assets/ourservice/service-ico2.svg`,
+  3: `${base}/assets/ourservice/service-ico3.svg`,
+  4: `${base}/assets/ourservice/service-ico4.svg`,
+  5: `${base}/assets/ourservice/service-ico5.svg`,
+  6: `${base}/assets/ourservice/service-ico6.svg`,
+  7: `${base}/assets/ourservice/service-ico7.svg`,
 } as const
 
 const serviceHovers = {
-  1: "/assets/ourservice/service-hover1.png",
-  2: "/assets/ourservice/service-hover2.png",
-  3: "/assets/ourservice/service-hover3.png",
-  4: "/assets/ourservice/service-hover4.png",
-  5: "/assets/ourservice/service-hover5.png",
-  6: "/assets/ourservice/service-hover6.png",
-  7: "/assets/ourservice/service-hover7.png",
+  1: `${base}/assets/ourservice/service-hover1.png`,
+  2: `${base}/assets/ourservice/service-hover2.png`,
+  3: `${base}/assets/ourservice/service-hover3.png`,
+  4: `${base}/assets/ourservice/service-hover4.png`,
+  5: `${base}/assets/ourservice/service-hover5.png`,
+  6: `${base}/assets/ourservice/service-hover6.png`,
+  7: `${base}/assets/ourservice/service-hover7.png`,
 } as const
 
 

@@ -1,34 +1,35 @@
 import Image from "next/image"
 
 export default function PenetrationTestingKeyFeatures() {
+  const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
   const items = [
     {
-      icon: "/assets/penetration-testing%20/key-ico1.svg",
+      icon: `${base}/assets/penetration-testing%20/key-ico1.svg`,
       title: "Certified experts",
       desc: "OSCP, CEH, CISSP-certified testers.",
     },
     {
-      icon: "/assets/penetration-testing%20/key-ico2.svg",
+      icon: `${base}/assets/penetration-testing%20/key-ico2.svg`,
       title: "Actionable reporting",
       desc: "Clear risk ratings, proof of exploit, and fix guidance.",
     },
     {
-      icon: "/assets/penetration-testing%20/key-ico3.svg",
+      icon: `${base}/assets/penetration-testing%20/key-ico3.svg`,
       title: "Retesting included",
       desc: "Verify vulnerabilities have been properly remediated.",
     },
     {
-      icon: "/assets/penetration-testing%20/key-ico4.svg",
+      icon: `${base}/assets/penetration-testing%20/key-ico4.svg`,
       title: "Confidential by design",
       desc: "Strict handling and secure evidence management.",
     },
     {
-      icon: "/assets/penetration-testing%20/key-ico5.svg",
+      icon: `${base}/assets/penetration-testing%20/key-ico5.svg`,
       title: "Consulting support",
       desc: "Advisory sessions for Dev, IT, and leadership.",
     },
     {
-      icon: "/assets/penetration-testing%20/key-ico6.svg",
+      icon: `${base}/assets/penetration-testing%20/key-ico6.svg`,
       title: "Audit-ready outputs",
       desc: "Documentation that maps to your control frameworks.",
     },

@@ -5,7 +5,8 @@ interface BannerAboutUsProps {
 export default function BannerAboutUs({ className = "" }: BannerAboutUsProps) {
   return (
     <section 
-      className={`full-bleed relative bg-[url('/assets/bg/aboutus-bg1.png')] bg-no-repeat bg-cover bg-center text-white overflow-hidden min-h-[420px] sm:min-h-[520px] lg:min-h-[600px] ${className}`}
+      className={`full-bleed relative text-white overflow-hidden min-h-[420px] sm:min-h-[520px] lg:min-h-[600px] ${className}`}
+      style={{ backgroundImage: `url(${process.env.NEXT_PUBLIC_BASE_PATH ?? ''}/assets/bg/aboutus-bg1.png)`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover', backgroundPosition: 'center' }}
       aria-label="About us banner"
     >
       
