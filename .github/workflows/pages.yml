@@ -28,7 +28,7 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build and export static site
+      - name: Build site (static export via output: export)
         env:
           # Set this to "/REPO_NAME" if deploying to https://username.github.io/REPO_NAME
           # Or leave empty for user/organization site https://username.github.io
