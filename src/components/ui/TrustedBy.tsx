@@ -2,13 +2,13 @@ import Image from "next/image"
 
 // Existing logo assets
 const base = process.env.NEXT_PUBLIC_BASE_PATH ?? ""
-const logoSingha = `${base}/assets/Penetration-Testing/525c5603d27fe296e84e043d0f2cdfbfff2419c9.png`
-const logoAgoda = `${base}/assets/Penetration-Testing/999c4b477e947c5e2701e31ec65610d12169d79b.png`
-const logoLazada = `${base}/assets/Penetration-Testing/10de95f44cf42d5b0fa0e176262c04dbb608ba46.png`
-const logoPTT = `${base}/assets/Penetration-Testing/299b8fc05496254cacd490d985d1b164f17b6dac.png`
-const logoLandRover = `${base}/assets/Penetration-Testing/29b4d53bdb940a1c9139daad2369767217a29183.png`
-const logoGaysorn = `${base}/assets/Penetration-Testing/b4fe507fe4fd448d5a5d5cbe84115ca4a683f93e.png`
-const logoItaltai = `${base}/assets/Penetration-Testing/4dddf07aca6747c84a75d7994d39aeff424083f9.png`
+const logoSingha = `${base}/assets/penetration-testing /525c5603d27fe296e84e043d0f2cdfbfff2419c9.png`
+const logoAgoda = `${base}/assets/penetration-testing /999c4b477e947c5e2701e31ec65610d12169d79b.png`
+const logoLazada = `${base}/assets/penetration-testing /10de95f44cf42d5b0fa0e176262c04dbb608ba46.png`
+const logoPTT = `${base}/assets/penetration-testing /299b8fc05496254cacd490d985d1b164f17b6dac.png`
+const logoLandRover = `${base}/assets/penetration-testing /29b4d53bdb940a1c9139daad2369767217a29183.png`
+const logoGaysorn = `${base}/assets/penetration-testing /b4fe507fe4fd448d5a5d5cbe84115ca4a683f93e.png`
+const logoItaltai = `${base}/assets/penetration-testing /4dddf07aca6747c84a75d7994d39aeff424083f9.png`
 
 export default function TrustedBy() {
   const logos = [
